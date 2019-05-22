@@ -50,10 +50,11 @@ public class MainActivity extends AppCompatActivity {
             Dispositivo d = new Dispositivo();
             try {
                 socket = new DatagramSocket();
+                socket.setSoTimeout(15000);
                 InetAddress address = InetAddress.getByName("239.255.255.250");
 
                 // send request
-                byte[] buf = new byte[256];
+                byte[] buf = new byte[4000];
                 String pesquisa = "M-SEARCH * HTTP/1.1\\r\\nHOST:239.255.255.250:1900\\r\\nMAN:\\\"ssdp:discover\\\"\\r\\nST:ssdp:all\\r\\nMX:3\\r\\n\\r\\n";
 
                 DatagramPacket packet =
