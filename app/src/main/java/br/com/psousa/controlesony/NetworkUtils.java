@@ -23,7 +23,7 @@ public class NetworkUtils {
 
             conexao = (HttpURLConnection) apiEnd.openConnection();
             conexao.setRequestMethod("GET");
-            conexao.setRequestProperty("X-CERS-DEVICE-ID", "MediaRemote:"+mac);
+            conexao.setRequestProperty("X-CERS-DEVICE-ID", "Sony:"+mac);
             conexao.setRequestProperty("X-CERS-DEVICE-INFO", "Android4.0.4/MediaRemoteForAndroid3.4.3/SoftwinerEvb");
             conexao.setReadTimeout(15000);
             conexao.setConnectTimeout(15000);
